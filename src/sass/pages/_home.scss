@@ -1,0 +1,80 @@
+.home-wrapper {
+  background-color: $COLORS-purple-100;
+  padding: 100px 160px 100px 170px;
+  min-height: 100vh;
+  gap: 220px;
+  display: flex;
+  flex-direction: column-reverse;
+
+  @include laptop {
+    flex-direction: row;
+  }
+
+  @include tablet {
+    padding: 60px 20% 20px 20%;
+    gap: 55px;
+  }
+
+  @include mobile {
+    padding: 90px 30px 14px 30px;
+    gap: 36px;
+    justify-content: flex-end;
+  }
+
+  .image-wrapper {
+    text-align: center;
+
+    img {
+      width: 440px;
+      height: 100%;
+      object-fit: contain;
+
+      @include tablet {
+        width: 311px;
+        margin-bottom: 52px;
+      }
+
+      @include mobile {
+        width: 165px;
+        margin-bottom: 34px;
+      }
+    }
+
+    .btn {
+      @include laptop {
+        display: none;
+      }
+    }
+  }
+
+  .home-content {
+    text-align: center;
+
+    @include laptop {
+      align-self: center;
+      text-align: right;
+    }
+
+    h1 {
+      margin-bottom: 16px;
+
+      span {
+        display: block;
+      }
+    }
+
+    p {
+      @include laptop {
+        margin-bottom: 52px;
+      }
+    }
+
+    .btn {
+      display: none;
+
+      @include laptop {
+        display: inline-block;
+      }
+    }
+  }
+}

@@ -1,0 +1,126 @@
+/**
+ * Poor man's vertical rhythm
+ */
+.chapter {
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  ul,
+  ol {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/**
+   * Lists
+   */
+ul,
+ol {
+  list-style-position: inside;
+  padding-left: 3px;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/**
+   * Headings
+   * 1. Position context for absolutely positioned anchor
+   */
+h1,
+h2,
+h3,
+h4 {
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  position: relative; /* 1 */
+
+  /**
+     * Prevent code inside headings from being capitalized
+     */
+  code {
+    text-transform: initial;
+  }
+}
+
+/**
+   * Main titles
+   */
+h1 {
+  font-size: 64px;
+  line-height: 64px;
+  font-family: $FONT-helvetica-bold;
+  color: $COLORS-purple-600;
+
+  @include mobile {
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  span {
+    background: $COLORS-purple-400;
+    background: linear-gradient(to right, $COLORS-purple-400 0%, $COLORS-pink-400 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/**
+   * Chapter titles
+   */
+h2 {
+  font-size: 48px;
+  line-height: 55px;
+  font-family: $FONT-helvetica-bold;
+  color: $COLORS-purple-600;
+
+  @include mobile {
+    font-size: 28px;
+    line-height: 32px;
+  }
+}
+
+/**
+   * Section headings
+   */
+h3 {
+  font-size: 52px;
+  line-height: 64px;
+}
+
+/**
+   * Sub-headings
+   */
+h4 {
+  font-size: 28px;
+  line-height: 34px;
+}
+
+p {
+  font-size: 24px;
+  line-height: 27px;
+  font-family: $FONT-helvetica-light;
+  color: $COLORS-gray-600;
+
+  @include mobile {
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
+
+/**
+   * Russian and German do not capitalize every word in a header
+   * See https://github.com/KittyGiraudel/sass-guidelines/issues/163
+   */
+:lang(de),
+:lang(ru) {
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-transform: initial;
+  }
+}
